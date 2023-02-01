@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{%block title%}
+login
+{% endblock %}
+
+
+{% block content %}
+<body>
+    <div class="card mx-auto ">
+        <br>
+        <br>
+        <hr>
+        <h1 class="text-center">Login Form</h1>
+    </div>
+    <form action="login" method="post" class="text-center mt-3">
+        {% csrf_token %}
+        <label for=""><b>Username </b></label>
+        <input type="text" name="username" placeholder="username"> <br>
+        <label for=""><b>Password</b></label>
+        <input type="password" name="password" placeholder="password"> <br>
+        <input type="submit">
+        
+    </form>
+</body>
+{% endblock %}

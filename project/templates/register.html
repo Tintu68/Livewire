@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{%block title%}
+Registration
+
+{%endblock%}
+
+{% block content %}
+<br>
+<hr>
+<br>
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="fw-bold text-center">Registration Form</h2>
+                        </div>
+                        <div class="card-body mx-auto">
+                            <form  action="register" method="post" class="card col-md-12 text-center ">
+                                {% csrf_token %}
+                                <div class="mb-3">
+                                    <label for="">First Name</label>
+                                    <input type="text" name="first_name" placeholder="first name">
+                                </div>
+            
+                                <div class="mb-3">
+                                    <label for="">last Name</label>
+                                    <input type="text" name="last_name" placeholder="last name">
+                                </div>
+            
+                                <div class="mb-3">
+                                    <label for="">Username</label>
+                                    <input type="text" name="username" placeholder="username">
+                                </div>
+            
+                                <div class="mb-3">
+                                    <label for="">Email id</label>
+                                    <input type="email" name="email" placeholder="email">
+                                </div>
+            
+                                <div class="mb-3">
+                                    <label for="">password</label>
+                                    <input type="password" name="password1" placeholder="password">
+                                </div>
+            
+                                <div class="mb-3">
+                                    <label for="">Confirm password</label>
+                                    <input type="password" name="password2" placeholder="confirm password">
+                                </div>
+            
+                                <div class="mb-3">
+                                    <button>Register</button>
+                                </div>
+                
+                            </form>
+                </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <div class="alert alert-primary text-center" role="alert">
+            {% for message in messages %}
+            <h3>{{message}}</h3>
+            {% endfor %}
+          </div>
+       
+</body>
+{% endblock %}
